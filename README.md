@@ -1,68 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Technology stack
+Languages & syntax choices
+TypeScript
 
-## Available Scripts
 
-In the project directory, you can run:
+A superset of JavaScript that allows the use of static typing, interfaces and classes. Developed by Microsoft.
+Differences to Java
+Interfaces can have variables. These variables are passed onto the implementer of the interface.
+Variables do not necessarily have to be typed. This allows compatibility with JavaScript packages that do not provide types.
+Optional parameters are supported in TypeScript. This renders the Builder pattern somewhat redundent and is thus not used in our code base.
+readonly is supported in TypeScript. We use this public readonly over accessor methods, in all 'model data' type objects.
+ECMAScript 2015
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The 6th major release of ECMAScript. A standardized JavaScript language. Provides us with classes and the core features of OO langages (E.g. classes).
+JSX Harmony
+JSX harmony is a language primarily built for React. The language was primarily used to make React components easier to read and faster to write.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Facebook's JavaScript library for rendering view type objects for use in graphical user interfaces for a set of state.
+Node.js
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Node.js is a server framework built from Chrome's JavaScript V8 engine. It was chosen for a number of reasons.
+Babel
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Babel essentially allows developers to transpile newer and alternative versions of JavaScript into older, more widely supported versions of JavaScript. We were unsure of whether the markers' used modern browsers so Babel ensured application compatiblity with their browsers.
+Webpack
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Webpack was used to tie all the languages and frameworks used in our product together and bundle the backend and frontend applications, each into single JavaScript files. In addition, Webpack was used as a means of hot module replacement which was handy for frontend development and rapid prototyping of features and functionality.
+Frameworks & libraries we decided against
+Redux
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Redux is an exellent framework for managing state in an application and works well with React. However, Redux has a functional programming based nature which didn't fit in with the assignment (object oriented assignment).
