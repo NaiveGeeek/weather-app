@@ -1,0 +1,172 @@
+.forecast-loader {
+  background: transparent;
+  padding: 16px;
+  position: relative;
+  width: 130px;
+  height: 130px;
+  margin: auto;
+}
+.forecast__cloudy{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.forecast__label {
+  /* position: absolute;
+  left: 100px;
+  top: 50%;
+  margin-top: -15px; */
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 600;
+  color: #555;
+}
+
+.forecast__cloudy__sun {
+  width: 85%;
+  height: 85%;
+  background: #faeb7c;
+  border-radius: 50%;
+  border: 1px solid #f5d76a;
+  margin-left: 10px;
+  position: relative;
+}
+.forecast__cloudy__sun::before{
+    content: '';
+    display: block;
+    width: 120%;
+    height: 120%;
+    background: #fdf6c6;
+    border: 1px solid #faeb7c;
+    border-radius: 50%;
+    animation-duration: 1.6s;
+    animation-name: fadeIn;
+    left: 50%;
+    top: 50%;
+    animation-iteration-count: infinite;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+  
+  .forecast__cloudy__sun::after{
+    width: 100%;
+    height: 100%;
+    background: #faeb7c;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    /* margin-left: -20px; */
+    top: 50%;
+    /* margin-top: -20px; */
+    transform: translate(-50%, -50%);
+    border: 1px solid #F5D76A;
+  }
+.forecast__cloudy__cloud {
+  width: 50%;
+  height: 35%;
+  top: 50%;
+  margin-top: -10px;
+  background: white;
+  position: absolute;
+  border: 1px solid #7ccafa;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+}
+
+.forecast__cloudy__cloud:after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-top: 1px solid #7ccafa;
+  border-left: 1px solid #7ccafa;
+  border-radius: 50%;
+  position: absolute;
+  left: -10px;
+  bottom: 0px;
+}
+
+.forecast__cloudy__cloud:before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-top: 1px solid #7ccafa;
+  border-right: 1px solid #7ccafa;
+  border-radius: 50%;
+  position: absolute;
+  right: -9px;
+  bottom: 0px;
+}
+
+.forecast__cloudy__cloud--normal {
+  animation-duration: 6s;
+  animation-name: moveRight;
+  animation-iteration-count: infinite;
+}
+
+.forecast__cloudy__cloud--small {
+  transform: scale(0.7);
+  left: 50px;
+  margin-top: -20px;
+  animation-duration: 6s;
+  animation-name: moveLeft;
+  animation-iteration-count: infinite;
+}
+
+/* animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    left: 10px;
+  }
+
+  50% {
+    left: 45px;
+  }
+
+  100% {
+    left: 10px;
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    left: 50px;
+  }
+
+  50% {
+    left: 10px;
+  }
+
+  100% {
+    left: 50px;
+  }
+}
+
+@keyframes raining {
+  0% {
+    top: 15px;
+  }
+  100% {
+    top: 50px;
+  }
+}

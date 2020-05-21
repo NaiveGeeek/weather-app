@@ -1,0 +1,228 @@
+.weather-container {
+  display: flex;
+  flex-flow: row;
+  height: auto;
+  margin: 30px auto 0;
+  width: fit-content;
+}
+
+.weather,
+.forecast {
+  min-width: 300px;
+  max-width: 400px;
+  height: 300px;
+  margin: 0px 30px 10px 20px;
+}
+.weather {
+  display: flex;
+  padding: 10px;
+}
+
+.left-side-weather,
+.right-side-weather {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+}
+
+.current-weather-title {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+}
+.current-weather {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  box-shadow: 3px 3px 6px 3px rgba(0, 0, 0, 0),
+    -3px -3px 3px 3px rgba(247, 251, 255, 0),
+    3px 3px 8px 2px rgba(0, 0, 0, 0.1) inset,
+    -3px -3px 7px 2px rgba(247, 251, 255, 0.7) inset;
+  border-radius: 50%;
+}
+.city-name {
+  font-size: larger;
+  text-align: start;
+  font-weight: 600;
+  margin: 10px 0;
+}
+/* .weather-icon{
+    position: absolute;
+    left: 50%;
+    top: 62%;
+    transform: translate(-50%,-50%);
+    font-size: 140px;
+    color: yellow;
+} */
+.weather-icon {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 95%;
+  height: 95%;
+  font-size: 14px;
+  left: 50%;
+}
+.weather-icon > img {
+  width: 85%;
+  height: 100%;
+  text-align: center;
+  line-height: 9;
+}
+
+.radio-group {
+  margin: 10px auto;
+  width: fit-content;
+  border-radius: 10px;
+  box-shadow: 3px 3px 6px 3px rgba(0, 0, 0, 0.1),
+    -1px -1px 0px 3px rgba(255, 255, 255, 1);
+}
+
+/*Radio button*/
+
+.radio-container {
+  width: 40px;
+  position: relative;
+  border: none;
+  cursor: pointer;
+  height: 25px;
+  display: inline-block;
+}
+.left-radio {
+  border-radius: 10px 0 0 10px;
+}
+.right-radio {
+  border-radius: 0 10px 10px 0px;
+}
+
+.custom-radio {
+  opacity: 0;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+}
+
+.custom-radio:checked ~ .unit-name-background {
+  background-color: navy;
+}
+.unit-name-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: skyblue;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.current-temprature {
+  width: fit-content;
+  height: 60px;
+  margin: 0 auto 5px auto;
+  padding: 10px;
+  font-size: 55px;
+  font-weight: 600;
+  font-family: cursive;
+  position: relative;
+}
+.degree-symbole {
+  position: absolute;
+  top: 20px;
+  right: 2px;
+  font-size: 20px;
+}
+
+/*real feel box */
+.feels-like {
+  display: flex;
+  margin: 5px 0;
+  padding: 5px;
+  width: 100%;
+  height: 40px;
+  /* flex: 1 1 ; */
+}
+.feels-icon {
+  width: 30%;
+  height: 100%;
+}
+.feels-icon > img {
+  width: 100%;
+  height: 100%;
+}
+.feels-details {
+  font-weight: 700;
+  position: relative;
+  width: 70%;
+  font-size: 32px;
+  font-family: Roboto;
+  height: 100%;
+  line-height: 1.5;
+}
+.feels-degree-symbole {
+  position: absolute;
+  font-size: 14px;
+  top: 6px;
+}
+.feels-like-text {
+  position: absolute;
+  top: -7px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #555;
+  font-family: Roboto;
+  width: 100%;
+  left: 2px;
+}
+
+.wind-speed-unit {
+  position: absolute;
+  top: 22px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #555;
+  font-family: Roboto;
+  width: 100%;
+  left: 39px;
+}
+
+/*forecast elements css*/
+.forecast {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 20px;
+  height: auto;
+  padding: 10px 20px;
+}
+.forecast-div {
+  margin: 10px 0px 0px 10px;
+  height: auto;
+  padding: 0px 12px;
+  border-radius: 20px;
+  background: #ecf0f3;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+}
+.forecast-section {
+  margin: 10px 0 5px 0;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #555;
+}
+.forecast-temp {
+  font-size: 14px;
+  margin: 5px 0 10px 0;
+}

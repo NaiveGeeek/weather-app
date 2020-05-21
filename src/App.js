@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import SearchBar from "./components/searchbar/searchbar";
+import Weather from "./components/weather/weather";
+import { fetchWeather } from "./action/action";
+import { connect } from "react-redux";
+// import WeatherLoader from './weatherLoader/weatherLoader';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  componentDidMount(){
+   const location = this.props.location;
+   this.props.fetchWeather(location.lat,location.lon);
+  }
+  render() {
+    return (
+
+        <div className="App">
+          <SearchBar></SearchBar>
+          <Weather></Weather>
+        </div>
+      
+    );
+  }
 }
-
-export default App;
+const mapStateToProps = (state)=>{
+  return{
+    location:state.location
+  }
+}
+const mapDispatchToProps = (dispatch)=>{
+  return{
+    fetchWeather :(lat,lon)=>dispatch(fetchWeather(lat,lon)),
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps) (App);
