@@ -37,7 +37,6 @@ export const fetchWeather = (lat = 23.55, lon = 74.45) => {
   return (dispatch) => {
     dispatch(fetchWeatherStart());
     const location = `lat=${lat}&lon=${lon}`;
-    console.log(process.env.WEATHER_API_KEY,process.env);
     const apiId = process.env.REACT_APP_WEATHER_API_KEY;
     httpApi(baseWeatherURL + location + queryWeatherURL + apiId)
       .then((response) => {
