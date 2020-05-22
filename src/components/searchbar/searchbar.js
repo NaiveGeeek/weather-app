@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./searchbar.css";
-import { FaSearch } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import loader from "../../assets/loader.svg";
 
@@ -199,11 +198,11 @@ class SearchBar extends Component {
             {this.getSuggestedElement()}
           </div>
         </div>
-        <button className="search-button">
+        {/* <button className="search-button">
           <span className="icon">
             <FaSearch className="search-icon"></FaSearch>
           </span>
-        </button>
+        </button> */}
       </div>
     );
   }

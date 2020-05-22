@@ -4,14 +4,20 @@
   padding: 1px 30px 1px 10px;
   margin: 10px;
   border: none;
-  background-color: none;
   border-radius: 25px;
-  box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
-  color: #555;
   font-size: 14px;
   font-weight: 600;
 }
+.light .city-input{
+  box-shadow: inset 8px 8px 8px var(--light-shadow-one), inset -8px -8px 8px var(--light-shadow-two);
+  color: var(--light-color);
+}
+.night .city-input{
+  box-shadow: inset 8px 8px 8px var(--night-shadow-one), inset -8px -8px 8px var(--night-shadow-two);
+  color: var(--night-color);
+  background-color: var(--light-color);
 
+}
 .search-div {
   margin: 30px auto 0;
   padding: 100px 35px 10px;
@@ -32,6 +38,13 @@
   font-size: 20px;
   font-family: Roboto;
 }
+.light .project-title{
+  box-shadow: inset 8px 8px 8px var(--light-shadow-one), inset -8px -8px 8px var(--light-shadow-two);
+}
+.night .project-title{
+  box-shadow: inset 8px 8px 8px var(--night-shadow-one), inset -8px -8px 8px var(--night-shadow-two);
+}
+
 .city-input:focus {
   outline: none;
 }
@@ -102,10 +115,15 @@
   padding: 5px;
   border-radius: 10px;
   width: 90%;
-  background-color: #ecf0f3;
   top: 46px;
   right: 6px;
   z-index: 100;
+}
+.light .autocomplete-result{
+  background-color: var(--light-bg-color);
+}
+.night .autocomplete-result{
+  background-color: var(--night-bg-color);
 }
 .autocomplete-result>span{
     margin:5px 5px;
@@ -115,17 +133,22 @@
     font-size: 16px;
     font-weight: 600;
     font-family: Roboto;
-    color: #555;
     padding: 3px;
     border-radius: 5px
-
 }
 
-.highlight{
+.light .highlight{
   color: black !important;
 }
-.autocomplete-result>span:hover,.active-span{
+.night .highlight{
+  color: #ffffff !important;
+}
+
+.light .autocomplete-result>span:hover,.light .active-span{
   background-color: rgb(212, 226, 250);
+}
+.night .autocomplete-result>span:hover,.night .active-span{
+  background-color: #777777;
 }
 
 .location-icon{
@@ -134,4 +157,11 @@
   font-size: 20px;
   text-align: center;
   align-items: center;
+}
+.light .location-icon{
+  color: var(--light-color);
+
+}
+.night .location-icon{
+  color: var(--night-color);
 }

@@ -5,43 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ecf0f3;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-.container{
-  max-width: 400px;
-  border-radius: 40px;
-  background: #ecf0f3;
-  box-shadow: 13px 13px 20px #cbced1,
-              -13px -13px 20px #ffffff;
-}
-.box-shadow{
-  box-shadow: 13px 13px 20px #cbced1,
-              0px 0px 20px #ffffff;
-}
-
-@media only screen and (max-width:850px){
-  .weather-container{
-    flex-flow: column !important;
-
-  }
-  .weather, .forecast{
-    margin: 0px 10px 30px 10px !important;
-  }
- 
-
-}
-
-@media only screen and (max-width:500px){
-  .search-div{
-    margin: 30px 10px 0 !important;
-
-  }
-  .forecast{
-    grid-template-columns: 45% 45% !important ;
-  }
 }

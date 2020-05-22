@@ -1,38 +1,64 @@
+:root{
+  --light-bg-color:#ecf0f3;
+  --night-bg-color:#363637;
+  --light-shadow-one:#cbced1;
+  --light-shadow-two:#ffffff;
+  --night-shadow-one:#2e2e2f;
+  --night-shadow-two:#3e3e3f;
+  --light-color:#363637;
+  --night-color:#ecf0f3;
+
+}
 .App {
   text-align: center;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  
+}
+.night {
+  background:var(--night-bg-color);
+  color:var(--night-color);
+}
+.light {
+  background:var(--light-bg-color);
+  color:var(--light-color) !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 400px;
+  border-radius: 40px;
+}
+.light .container{
+  box-shadow: 13px 13px 20px var(--light-shadow-one), -13px -13px 20px var(--light-shadow-two);
+}
+.night .container{
+  box-shadow: 13px 13px 20px var(--night-shadow-one), -13px -13px 20px var(--night-shadow-two);
+}
+.light .box-shadow {
+  box-shadow: 13px 13px 20px var(--light-shadow-one), 0px 0px 20px var(--light-shadow-two);
+
+}
+.night .box-shadow{
+  box-shadow: 13px 13px 20px var(--night-shadow-one), -13px -13px 20px var(--night-shadow-two);
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width: 850px) {
+  .weather-container {
+    flex-flow: column !important;
+  }
+  .weather,
+  .forecast {
+    margin: 0px 10px 30px 10px !important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 500px) {
+  .search-div {
+    margin: 30px 10px 0 !important;
   }
-  to {
-    transform: rotate(360deg);
+  .forecast {
+    grid-template-columns: 45% 45% !important ;
   }
 }
