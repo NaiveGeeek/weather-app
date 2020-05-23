@@ -148,7 +148,7 @@
   background-color: skyblue;
 }
 .night .unit-name-background{
-  background-color:var(--light-color);
+  background-color:var(--night-bg-color);
 }
 .current-temprature {
   width: fit-content;

@@ -12,9 +12,10 @@ class App extends Component {
    this.props.fetchWeather(location.lat,location.lon);
   }
   render() {
+   const {darkMode} = this.props.app;
     return (
 
-        <div className="App night">
+        <div className={`App ${darkMode?"night":"light"}`}>
           <SearchBar></SearchBar>
           <Weather></Weather>
         </div>
@@ -24,7 +25,8 @@ class App extends Component {
 }
 const mapStateToProps = (state)=>{
   return{
-    location:state.location
+    location:state.location,
+    app:state.app,
   }
 }
 const mapDispatchToProps = (dispatch)=>{

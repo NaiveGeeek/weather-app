@@ -33,6 +33,13 @@ export const getLocationError = (error) => ({
   },
 });
 
+export const changeTheme = (darkMode)=>({
+ type:actionTypes.CHANGE_APP_THEME,
+ payload:{
+   darkMode
+ }
+});
+
 export const fetchWeather = (lat = 23.55, lon = 74.45) => {
   return (dispatch) => {
     dispatch(fetchWeatherStart());

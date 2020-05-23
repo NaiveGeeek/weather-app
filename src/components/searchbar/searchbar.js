@@ -11,7 +11,7 @@ import {
   throttle,
   debounce,
 } from "../../utils";
-import { getLocation, getLocationError, fetchWeather } from "../../action/action";
+import { getLocation, getLocationError, fetchWeather, changeTheme } from "../../action/action";
 import { connect } from "react-redux";
 
 class SearchBar extends Component {
@@ -168,8 +168,12 @@ class SearchBar extends Component {
     }
     return elements;
   };
-
+ handleThemeChange = (event)=>{
+    const target = event.target;
+    this.props.changeTheme(target.checked);
+ }
   render() {
+    const {darkMode} = this.props.app;
     return (
       <div className="search-div container">
         <div className="project-title">
@@ -203,8 +207,16 @@ class SearchBar extends Component {
             <FaSearch className="search-icon"></FaSearch>
           </span>
         </button> */}
+        <div className="toggle-theme-div">
+          <input className="toggle-theme-switch" onChange={this.handleThemeChange} checked={darkMode} type="checkbox"></input>
+        </div>
       </div>
     );
+  }
+}
+const mapStateToProps = (state)=>{
+  return{
+    app:state.app
   }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -212,6 +224,7 @@ const mapDispatchToProps = (dispatch) => {
     setLocation: (data) => dispatch(getLocation(data, false)),
     setLocationError: () => dispatch(getLocationError(true)),
     fetchWeather:(lat,lon)=>dispatch(fetchWeather(lat,lon)),
+    changeTheme:(darkMode)=>dispatch(changeTheme(darkMode)),
   };
 };
-export default connect(null, mapDispatchToProps)(SearchBar);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
