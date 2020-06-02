@@ -61,6 +61,7 @@
 @media only screen and (max-width: 500px) {
   .search-div {
     margin: 30px 10px 0 !important;
+    flex-flow: column;
   }
   .forecast {
     grid-template-columns: 45% 45% !important ;
