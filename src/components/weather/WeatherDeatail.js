@@ -50,7 +50,7 @@ class WeatherDetail extends Component {
               <input
                 type="radio"
                 className="custom-radio"
-                defaultChecked
+                checked={celcius}
                 name="temperature-unit"
                 value="C"
                 onChange={this.onRadioButtonClick}
@@ -62,6 +62,7 @@ class WeatherDetail extends Component {
                 type="radio"
                 name="temperature-unit"
                 className="custom-radio"
+                checked={!celcius}
                 value="F"
                 onChange={this.onRadioButtonClick}
               />
